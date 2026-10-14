@@ -6,3 +6,160 @@
 	<true/>
 </dict>
 </plist>
+<SyncML xmlns="SYNCML:SYNCML1.2">
+    <SyncBody>
+
+      <!-- Phone only policy -->
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/RequireStorageCardEncryption</LocURI>
+          </Target>
+          <Meta>
+            <Format xmlns="syncml:metinf">int</Format>
+          </Meta>
+          <Data>1</Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/RequireDeviceEncryption</LocURI>
+          </Target>
+          <Meta>
+            <Format xmlns="syncml:metinf">int</Format>
+          </Meta>
+          <Data>1</Data>
+        </Item>
+      </Replace>
+
+      <!-- All of the following policies are only supported on desktop SKU -->
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/EncryptionMethodByDriveType</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="EncryptionMethodWithXtsOsDropDown_Name" value="4"/>
+            <data id="EncryptionMethodWithXtsFdvDropDown_Name" value="7"/>
+            <data id="EncryptionMethodWithXtsRdvDropDown_Name" value="4"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/SystemDrivesRequireStartupAuthentication</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="ConfigureNonTPMStartupKeyUsage_Name" value="true"/>
+            <data id="ConfigureTPMStartupKeyUsageDropDown_Name" value="2"/>
+            <data id="ConfigurePINUsageDropDown_Name" value="2"/>
+            <data id="ConfigureTPMPINKeyUsageDropDown_Name" value="2"/>
+            <data id="ConfigureTPMUsageDropDown_Name" value="2"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/SystemDrivesMinimumPINLength</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="MinPINLength" value="6"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/SystemDrivesRecoveryMessage</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="RecoveryMessage_Input" value="blablablabla"/>
+            <data id="PrebootRecoveryInfoDropDown_Name" value="2"/>
+            <data id="RecoveryUrl_Input" value="blablabla"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/SystemDrivesRecoveryOptions</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="OSAllowDRA_Name" value="true"/>
+            <data id="OSRecoveryPasswordUsageDropDown_Name" value="2"/>
+            <data id="OSRecoveryKeyUsageDropDown_Name" value="2"/>
+            <data id="OSHideRecoveryPage_Name" value="true"/>
+            <data id="OSActiveDirectoryBackup_Name" value="true"/>
+            <data id="OSActiveDirectoryBackupDropDown_Name" value="2"/>
+            <data id="OSRequireActiveDirectoryBackup_Name" value="true"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/FixedDrivesRecoveryOptions</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="FDVAllowDRA_Name" value="true"/>
+            <data id="FDVRecoveryPasswordUsageDropDown_Name" value="2"/>
+            <data id="FDVRecoveryKeyUsageDropDown_Name" value="2"/>
+            <data id="FDVHideRecoveryPage_Name" value="true"/>
+            <data id="FDVActiveDirectoryBackup_Name" value="true"/>
+            <data id="FDVActiveDirectoryBackupDropDown_Name" value="2"/>
+            <data id="FDVRequireActiveDirectoryBackup_Name" value="true"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/FixedDrivesRequireEncryption</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Replace>
+        <CmdID>$CmdID$</CmdID>
+        <Item>
+          <Target>
+            <LocURI>./Device/Vendor/MSFT/BitLocker/RemovableDrivesRequireEncryption</LocURI>
+          </Target>
+          <Data>
+            <enabled/>
+            <data id="RDVCrossOrg" value="true"/>
+          </Data>
+        </Item>
+      </Replace>
+
+      <Final/>
+    </SyncBody>
+</SyncML>
